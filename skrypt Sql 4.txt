@@ -1,0 +1,14 @@
+-- Dodawanie indeksów do tabeli BOOKS
+CREATE INDEX index_books_title ON BOOKS (TITLE);
+
+-- Wyświetlanie planu zapytania przed dodaniem indeksu
+SELECT * FROM READERS WHERE FIRSTNAME = 'John';
+EXPLAIN SELECT * FROM READERS WHERE FIRSTNAME = 'John';
+
+-- Dodawanie indeksów do tabeli READERS
+CREATE INDEX index_readers_firstname ON READERS (FIRSTNAME);
+CREATE INDEX index_readers_lastname ON READERS (LASTNAME);
+
+-- Wyświetlanie planu zapytania po dodaniu indeksu
+SELECT * FROM READERS WHERE FIRSTNAME = 'John';
+EXPLAIN SELECT * FROM READERS WHERE FIRSTNAME = 'John';
